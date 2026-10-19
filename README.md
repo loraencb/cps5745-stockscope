@@ -5,9 +5,15 @@ A Python, Streamlit, and Plotly dashboard comparing Apple (AAPL), Microsoft (MSF
 **Braulio Lora Encarnacion**  
 **Developed for CPS*5745**
 
-## Deployment status
+## Live dashboard
 
-The application is complete and verified locally. Public deployment is waiting for GitHub and Streamlit sign-in. No public URL has been verified yet. See `submission/SUBMISSION.md` for the exact next steps and `submission/local_preview/` for clearly labeled local screenshots.
+**[Open StockScope](https://braulio-stockscope.streamlit.app/)**
+
+The app is deployed on Streamlit Community Cloud using Python 3.12. It was verified in a fresh signed-out Chrome session on October 19, 2026: all five charts, both shared filters, dynamic findings, and the actual return calculations passed. No sign-in is needed to view it.
+
+Source repository: https://github.com/loraencb/cps5745-stockscope
+
+Download [the complete project and submission bundle](StockScope_Quiz.zip) for the source, screenshots, and submission notes. After extracting it, the three submission screenshots are in `submission/deployed_screenshots/`. The matching `verification.json` records the public URL, time, selected dates, calculations, and successful checks. See `submission/SUBMISSION.md` for the ready-to-submit materials.
 
 ## Run locally
 
@@ -73,7 +79,13 @@ For real browser checks against a running local or deployed app:
 .\.venv\Scripts\python.exe scripts\verify_browser.py http://localhost:8501 --output submission\local_preview
 ```
 
-This uses an installed Google Chrome browser in a fresh, signed-out test session. Replace the local URL with the deployed URL and use `submission\deployed_screenshots` after publishing. It checks the actual CSV-backed return calculations and both filters, then saves screenshots and a machine-readable report. Local previews are not evidence of a public deployment.
+This uses an installed Google Chrome browser in a fresh, signed-out test session. For the public app, run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\verify_browser.py https://braulio-stockscope.streamlit.app/ --output submission\deployed_screenshots
+```
+
+The script supports the signed-out Streamlit Cloud iframe as well as the local app. It checks the actual CSV-backed return calculations and both filters, then saves screenshots and a machine-readable report. Local previews are not evidence of a public deployment.
 
 ## Deploy to Streamlit Community Cloud
 
